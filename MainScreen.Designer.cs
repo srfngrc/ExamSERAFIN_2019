@@ -87,6 +87,7 @@
             this.BTNmodify.TabIndex = 3;
             this.BTNmodify.Text = "Modify Data From Teams";
             this.BTNmodify.UseVisualStyleBackColor = true;
+            this.BTNmodify.Click += new System.EventHandler(this.BTNmodify_Click);
             // 
             // BTNcloseApp
             // 
@@ -118,6 +119,7 @@
             this.DataGridEXAM.Location = new System.Drawing.Point(287, 26);
             this.DataGridEXAM.Name = "DataGridEXAM";
             this.DataGridEXAM.ReadOnly = true;
+            this.DataGridEXAM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridEXAM.Size = new System.Drawing.Size(1145, 284);
             this.DataGridEXAM.TabIndex = 5;
             this.DataGridEXAM.SelectionChanged += new System.EventHandler(this.DataGridEXAM_SelectionChanged);
