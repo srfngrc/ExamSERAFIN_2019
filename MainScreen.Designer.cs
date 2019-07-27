@@ -66,6 +66,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.BTNdelete = new System.Windows.Forms.Button();
+            this.BTNreset = new System.Windows.Forms.Button();
+            this.BTNSaveToaFile = new System.Windows.Forms.Button();
+            this.BTNcredits = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridEXAM)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +94,7 @@
             // 
             // BTNcloseApp
             // 
-            this.BTNcloseApp.Location = new System.Drawing.Point(769, 420);
+            this.BTNcloseApp.Location = new System.Drawing.Point(1220, 420);
             this.BTNcloseApp.Name = "BTNcloseApp";
             this.BTNcloseApp.Size = new System.Drawing.Size(203, 23);
             this.BTNcloseApp.TabIndex = 4;
@@ -388,11 +391,44 @@
             this.BTNdelete.UseVisualStyleBackColor = true;
             this.BTNdelete.Click += new System.EventHandler(this.BTNdelete_Click);
             // 
+            // BTNreset
+            // 
+            this.BTNreset.Location = new System.Drawing.Point(750, 420);
+            this.BTNreset.Name = "BTNreset";
+            this.BTNreset.Size = new System.Drawing.Size(189, 23);
+            this.BTNreset.TabIndex = 29;
+            this.BTNreset.Text = "Reset Fields Selected";
+            this.BTNreset.UseVisualStyleBackColor = true;
+            this.BTNreset.Click += new System.EventHandler(this.BTNreset_Click);
+            // 
+            // BTNSaveToaFile
+            // 
+            this.BTNSaveToaFile.Location = new System.Drawing.Point(984, 420);
+            this.BTNSaveToaFile.Name = "BTNSaveToaFile";
+            this.BTNSaveToaFile.Size = new System.Drawing.Size(201, 23);
+            this.BTNSaveToaFile.TabIndex = 30;
+            this.BTNSaveToaFile.Text = "Save List to a File";
+            this.BTNSaveToaFile.UseVisualStyleBackColor = true;
+            this.BTNSaveToaFile.Click += new System.EventHandler(this.BTNSaveToaFile_Click);
+            // 
+            // BTNcredits
+            // 
+            this.BTNcredits.Location = new System.Drawing.Point(1328, 449);
+            this.BTNcredits.Name = "BTNcredits";
+            this.BTNcredits.Size = new System.Drawing.Size(95, 23);
+            this.BTNcredits.TabIndex = 31;
+            this.BTNcredits.Text = "App Credits";
+            this.BTNcredits.UseVisualStyleBackColor = true;
+            this.BTNcredits.Click += new System.EventHandler(this.BTNcredits_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1444, 479);
+            this.Controls.Add(this.BTNcredits);
+            this.Controls.Add(this.BTNSaveToaFile);
+            this.Controls.Add(this.BTNreset);
             this.Controls.Add(this.BTNdelete);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -469,6 +505,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button BTNdelete;
+        private System.Windows.Forms.Button BTNreset;
+        private System.Windows.Forms.Button BTNSaveToaFile;
+        private System.Windows.Forms.Button BTNcredits;
     }
 }
 

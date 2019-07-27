@@ -8,3 +8,4 @@ C:\VSrepositories\bin\Debug\ExamSERAFIN_July2019.exe
 C:\VSrepositories\bin\Debug\ExamSERAFIN_July2019.pdb
 C:\VSrepositories\obj\Debug\ExamSERAFIN_July2019.exe
 C:\VSrepositories\obj\Debug\ExamSERAFIN_July2019.pdb
+C:\VSrepositories\obj\Debug\ExamSERAFIN_July2019.Credits_Screen.resources

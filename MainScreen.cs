@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +22,13 @@ namespace ExamSERAFIN_July2019
         SqlConnection connection_Exam_Serafin2 = new SqlConnection(CS_Exam);
         SqlConnection connection_Exam_Serafin3 = new SqlConnection(CS_Exam);
         SqlConnection connection_Exam_Serafin4 = new SqlConnection(CS_Exam);
+        SqlConnection connection_Exam_Serafin5 = new SqlConnection(CS_Exam);
 
         public MainScreen()
         {
             InitializeComponent();
             DataLoadExamSerafin();
         }
-
 
         private void DataLoadExamSerafin()
         {
@@ -210,6 +211,72 @@ namespace ExamSERAFIN_July2019
                     connection_Exam_Serafin4.Close();
                 }
             }
+        }
+
+        private void BTNreset_Click(object sender, EventArgs e)
+        {
+                textBox1.Text = "";
+                textBox2.ResetText();
+                textBox3.ResetText();
+                textBox4.ResetText();
+                textBox5.ResetText();
+                textBox6.ResetText();
+                textBox7.ResetText();
+                textBox8.ResetText();
+                textBox9.ResetText();
+                textBox10.ResetText();
+                textBox11.ResetText();
+        }
+
+        private void BTNSaveToaFile_Click(object sender, EventArgs e)
+        {
+            //There is no access possible to unit C:
+            //StreamWriter StrWtr_Serafin = new StreamWriter(@"C:\TEAMLIST.TXT", true);
+            StreamWriter StrWtr_Serafin = new StreamWriter(@"C:\Users\Programming8\Documents\TEAMLIST.TXT", true);
+
+            try
+            {
+                SqlCommand SaveFile5 = new SqlCommand("SELECT * FROM dbo.Teams;", connection_Exam_Serafin5);
+                connection_Exam_Serafin5.Open();
+
+                SqlDataReader reader_Exam_Serafin5 = SaveFile5.ExecuteReader();
+
+                while (reader_Exam_Serafin5.Read())
+                {
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[0] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[1] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[2] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[3] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[4] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[5] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[6] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[7] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[8] + ";");
+                    StrWtr_Serafin.Write(reader_Exam_Serafin5[9] + ";");
+                    StrWtr_Serafin.WriteLine(reader_Exam_Serafin5[10]+ "\t");
+                }
+                reader_Exam_Serafin5.Close();
+                StrWtr_Serafin.Close();
+                MessageBox.Show("Data correctly inserted in file TEAMLIST.TXT in C-Users-Programming8-Documents.");
+            }
+            catch (Exception execption_Exam_Serafin5)
+            {
+                MessageBox.Show(execption_Exam_Serafin5.Message);
+            }
+            finally
+            {
+                if (connection_Exam_Serafin5.State == ConnectionState.Open)
+                {
+                    connection_Exam_Serafin5.Close();
+                }
+            }
+
+        }
+
+        private void BTNcredits_Click(object sender, EventArgs e)
+        {
+            Credits_Screen infoAuthor = new Credits_Screen();
+            infoAuthor.Show();
         }
     }
 }
